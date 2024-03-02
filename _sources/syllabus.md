@@ -20,10 +20,8 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 * The course will be offered in English.
 	* We encourage everyone to interact in English. If some conceptual questions are difficult to be described in English, one can ask the question in Mandarin, and I will translate that into English. If I forgot to do that, please remind me to do so.
 * Teaching method: Lectures with live video streaming. 
-* Please join the google classroom.
-	* Course code: please contact the instructor.
-	* Course-related information(*e.g.*, homework) will be posted in the google classroom.
-	* Access to the live video streaming will be provided in the google classroom.
+	* link for the video streaming: please contact the instructor.
+	* Course-related information(*e.g.*, homework) will be posted in the eeclass platform of NTHU.
 
 ## Evaluation:
 
