@@ -112,18 +112,16 @@ Polymers are large(high molar mass) molecules composed of a large number of mono
 	
 * We assume the joint of the monomers can rotate freely, \emph{i.e.} the potential energy is independent of the bonding angle, $\phi$, between two nearby monomers. 
 * We assume the monomers can overlap with each other in space and have no interaction between each other.
+	The model with above two assumptions is the freely jointed chain model. It is the idealization of polymers analogous to ideal gas model for gases.
 
-The model with above two assumptions is the freely jointed chain model. It is the idealization of polymers analogous to ideal gas model for gases.
-
-```{figure} /images/polymers.pdf
----
-width: 750px
-name: polymers-fig
----
-Schematic picture of a single chain polymer molecular formed by the monomers represented by the grey oval.
-```
-A key property that we are interested in is the size of the polymer. Usually the polymer coils up. The way they coils up will be a competition between the entropy and the energetics.  Therefore, the size of the polymer is not simply the number of monomers, $N$, times the size of the monomer, $a$. Instead, we need to use some statistical description to characterize the size of the polymer.  Usually, we use the root-mean-square end-to-end distance, $\langle r^2\rangle ^{1/2}$, as a measure for the size of the polymer. Here, $r$ is the distance from one end of the polymer to the other in three-dimensional space. The average is taken over all possible ways the polymer coils. One of the configuration is simple, if all the monomers are aligned in one direction, the end-to-end distance $r_{straight}=Na$. However, this is just one of the possible value of $r$, once the polymer coils, $\langle r^2\rangle ^{1/2}<Na$.
-	
+	```{figure} /images/polymers.pdf
+	---
+	width: 750px
+	name: polymers-fig
+	---
+	Schematic picture of a single chain polymer molecular formed by the monomers represented by the grey oval.
+	```
+A key property that we are interested in is the size of the polymer. Usually the polymer coils up. The way they coils up will be a competition between the entropy and the energetics.  Therefore, the size of the polymer is not simply the number of monomers, $N$, times the size of the monomer, $a$. Instead, we need to use some statistical description to characterize the size of the polymer.  Usually, we use the root-mean-square end-to-end distance, $\langle r^2\rangle ^{1/2}$, as a measure for the size of the polymer. Here, $r$ is the distance from one end of the polymer to the other in three-dimensional space. The average is taken over all possible ways the polymer coils. One of the configuration is simple, if all the monomers are aligned in one direction, the end-to-end distance $r_{straight}=Na$. However, this is just one of the possible value of $r$, once the polymer coils, $\langle r^2\rangle ^{1/2}<Na$	
 1. It is interesting to observe that the freely jointed model in one-dimension is actually the simple one-dimensional random walk we discussed during the lecture. The step size is just the size of the monomer. The one-dimensional constraint restricts $\phi=0/\pi$. Let's start in this simple limit and use $x$ to represent the end-to-end distance in one-dimensional case. Derive the probability distribution $P_{1D}(x,N)$ when the number of monomers $N$ is large.
 2. For the three-dimensional case, we assume the orientation is completely random and the vector from monomer $i$ and the vector for monomer $i+1$ are uncorrelated. \emph{i.e.} $\langle \boldsymbol{d}_{i}\cdot \boldsymbol{d}_{j}\rangle_{i\neq j}=0$. Therefore, we expect $N$ to be distributed evenly $N_{x}=N_{y}=N_{z}=\frac{N}{3}$. Here, $N_{x}$ is a rough definition of the monomer belongs to the monomer in $x$ direction. We can simply consider the projection of the monomer to the $x,y,z$ direction. If the projection to $x$ direction is has the largest size, we said it is a $x$ monomer that should be counted in $N_x$. Derive $\langle r^2\rangle ^{\frac{1}{2}}$ and express it using $N$ and $a$. This is a simple estimation for the size of the polymer. (Sometimes you will see people use the radius of gyration $r_{g}^2$ to estimate the size of the polymer. $r_g$ is the average distance between monomers and the center of mass. It turns out the length scale, $\langle r_g^2\rangle $, will be proportional with $\langle r^2\rangle $. We will not discuss the calculation here, but just mention the fact that using the root mean square of the end-to-end distance capture the essential information for the size of the polymer.)
 

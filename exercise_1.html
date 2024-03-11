@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Exercise 2" href="exercise_2.html" />
-    <link rel="prev" title="Epilogue" href="biblio.html" />
+    <link rel="prev" title="Exercise" href="exercise_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -198,18 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix A</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
 </ul>
@@ -503,23 +503,21 @@ We can use the following trick to express this integral in another form. In <spa
 <div class="tip admonition">
 <p class="admonition-title">Problem 4 (Freely Jointed Chain–Gaussian model)</p>
 <p>Polymers are large(high molar mass) molecules composed of a large number of monomers bonded together to form a chain. In reality, the monomers are bounded covalently. That is, the potential energy between two monomers should be a complex function of the bonding angle between two nearby monomers. Let’s make some assumptions to simplify our problem which leads to the freely jointed model. (We might over simplify the problem but let’s just try it first to get a feeling about what kind of problem we are facing. Then we can ask how to put back more ingredients to make our analysis more realistic.)</p>
-<ul class="simple">
+<ul>
 <li><p>We assume the joint of the monomers can rotate freely, \emph{i.e.} the potential energy is independent of the bonding angle, <span class="math notranslate nohighlight">\(\phi\)</span>, between two nearby monomers.</p></li>
-<li><p>We assume the monomers can overlap with each other in space and have no interaction between each other.</p></li>
-</ul>
-<p>The model with above two assumptions is the freely jointed chain model. It is the idealization of polymers analogous to ideal gas model for gases.</p>
+<li><p>We assume the monomers can overlap with each other in space and have no interaction between each other.
+The model with above two assumptions is the freely jointed chain model. It is the idealization of polymers analogous to ideal gas model for gases.</p>
 <div class="figure align-default" id="polymers-fig">
 <a class="reference internal image-reference" href="_images/polymers.pdf"><img alt="_images/polymers.pdf" src="_images/polymers.pdf" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Schematic picture of a single chain polymer molecular formed by the monomers represented by the grey oval.</span><a class="headerlink" href="#polymers-fig" title="Permalink to this image">#</a></p>
 </div>
-</div>
-<p>A key property that we are interested in is the size of the polymer. Usually the polymer coils up. The way they coils up will be a competition between the entropy and the energetics.  Therefore, the size of the polymer is not simply the number of monomers, <span class="math notranslate nohighlight">\(N\)</span>, times the size of the monomer, <span class="math notranslate nohighlight">\(a\)</span>. Instead, we need to use some statistical description to characterize the size of the polymer.  Usually, we use the root-mean-square end-to-end distance, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}\)</span>, as a measure for the size of the polymer. Here, <span class="math notranslate nohighlight">\(r\)</span> is the distance from one end of the polymer to the other in three-dimensional space. The average is taken over all possible ways the polymer coils. One of the configuration is simple, if all the monomers are aligned in one direction, the end-to-end distance <span class="math notranslate nohighlight">\(r_{straight}=Na\)</span>. However, this is just one of the possible value of <span class="math notranslate nohighlight">\(r\)</span>, once the polymer coils, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}&lt;Na\)</span>.</p>
+</li>
+</ul>
+<p>A key property that we are interested in is the size of the polymer. Usually the polymer coils up. The way they coils up will be a competition between the entropy and the energetics.  Therefore, the size of the polymer is not simply the number of monomers, <span class="math notranslate nohighlight">\(N\)</span>, times the size of the monomer, <span class="math notranslate nohighlight">\(a\)</span>. Instead, we need to use some statistical description to characterize the size of the polymer.  Usually, we use the root-mean-square end-to-end distance, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}\)</span>, as a measure for the size of the polymer. Here, <span class="math notranslate nohighlight">\(r\)</span> is the distance from one end of the polymer to the other in three-dimensional space. The average is taken over all possible ways the polymer coils. One of the configuration is simple, if all the monomers are aligned in one direction, the end-to-end distance <span class="math notranslate nohighlight">\(r_{straight}=Na\)</span>. However, this is just one of the possible value of <span class="math notranslate nohighlight">\(r\)</span>, once the polymer coils, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}&lt;Na\)</span></p>
 <ol class="arabic simple">
 <li><p>It is interesting to observe that the freely jointed model in one-dimension is actually the simple one-dimensional random walk we discussed during the lecture. The step size is just the size of the monomer. The one-dimensional constraint restricts <span class="math notranslate nohighlight">\(\phi=0/\pi\)</span>. Let’s start in this simple limit and use <span class="math notranslate nohighlight">\(x\)</span> to represent the end-to-end distance in one-dimensional case. Derive the probability distribution <span class="math notranslate nohighlight">\(P_{1D}(x,N)\)</span> when the number of monomers <span class="math notranslate nohighlight">\(N\)</span> is large.</p></li>
 <li><p>For the three-dimensional case, we assume the orientation is completely random and the vector from monomer <span class="math notranslate nohighlight">\(i\)</span> and the vector for monomer <span class="math notranslate nohighlight">\(i+1\)</span> are uncorrelated. \emph{i.e.} <span class="math notranslate nohighlight">\(\langle \boldsymbol{d}_{i}\cdot \boldsymbol{d}_{j}\rangle_{i\neq j}=0\)</span>. Therefore, we expect <span class="math notranslate nohighlight">\(N\)</span> to be distributed evenly <span class="math notranslate nohighlight">\(N_{x}=N_{y}=N_{z}=\frac{N}{3}\)</span>. Here, <span class="math notranslate nohighlight">\(N_{x}\)</span> is a rough definition of the monomer belongs to the monomer in <span class="math notranslate nohighlight">\(x\)</span> direction. We can simply consider the projection of the monomer to the <span class="math notranslate nohighlight">\(x,y,z\)</span> direction. If the projection to <span class="math notranslate nohighlight">\(x\)</span> direction is has the largest size, we said it is a <span class="math notranslate nohighlight">\(x\)</span> monomer that should be counted in <span class="math notranslate nohighlight">\(N_x\)</span>. Derive <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{\frac{1}{2}}\)</span> and express it using <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(a\)</span>. This is a simple estimation for the size of the polymer. (Sometimes you will see people use the radius of gyration <span class="math notranslate nohighlight">\(r_{g}^2\)</span> to estimate the size of the polymer. <span class="math notranslate nohighlight">\(r_g\)</span> is the average distance between monomers and the center of mass. It turns out the length scale, <span class="math notranslate nohighlight">\(\langle r_g^2\rangle \)</span>, will be proportional with <span class="math notranslate nohighlight">\(\langle r^2\rangle \)</span>. We will not discuss the calculation here, but just mention the fact that using the root mean square of the end-to-end distance capture the essential information for the size of the polymer.)</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
 
@@ -555,12 +553,12 @@ We can use the following trick to express this integral in another form. In <spa
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="biblio.html"
+       href="exercise_0.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Epilogue</p>
+        <p class="prev-next-title">Exercise</p>
       </div>
     </a>
     <a class="right-next"
