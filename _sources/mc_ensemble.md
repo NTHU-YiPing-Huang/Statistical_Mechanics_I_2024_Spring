@@ -1,44 +1,62 @@
 # Microcanonical ensemble
 
-What is an ensemble? It is a framework that relate the microscopic configuration with a probability. The micro canonical ensemble might be the simplest one to define. The system we are considering is a system with conserved energy. The microscopic states that satisfy this energy conserving constraints form the phase space of the system. The micro canonical ensemble assign equal weights to all those states in the constrained phase space.
-
-Why this assignment is useful? Because the equilibrium configurations has overwhelming number in the constrained phase space. So we can calculate the equilibrium value using the micro canonical ensemble. *i.e.* For extensive variable $A$, we have its equilibrium value $a^*$ to be
-
-$$
-a^*=\langle A \rangle =\frac{1}{|\Gamma|} \int_{\Gamma}d\xi A(\xi)\text{.}
-$$
+What is an ensemble? It is a framework that relate the microscopic configuration with a probability. The micro canonical ensemble might be the simplest one to define. The system we are considering is a system with conserved energy. The microscopic states that satisfy this energy conserving constraints form the phase space of the system. **The micro canonical ensemble assign equal weights to all those states in the constrained phase space.**
 
 Why it is so? From the variational principle of entropy, the entropy is maximized at equilibrium.
 
 $$
-S(X;a)\le S(X;a^*)\text{.}
+S(X;a)\le S(X;a_{eq})\text{.}
 $$
 Here $X$ represent the rest of the extensive variables. Here $a$ is the possible value of the observable $A$ that is not in equilibrium.
 
-The corresponding expression using the Boltzmann's postulate is
+The corresponding expressions of phase space volume using the Boltzmann's postulate are
 
 $$
 S(X;a) &=k_B\ln\left[\int d\xi \delta(A(\xi)-a)\right]=k_B\ln(|\Gamma_a|)\\
-S(X;a^*) &=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\text{.}
+S(X;a_{eq}) &=k_B\ln\left[\int d\xi \delta(A(\xi)-a_{eq})\right]=k_B\ln(|\Gamma_{a_{eq}}|)\text{.}
 $$
 
 We can immediately see
 
 $$
-\frac{|\Gamma_a|}{|\Gamma_{a^*}|} &=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a^*)\right)\right]\\
-&\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a^*}}_{<0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a^*)^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
+\frac{|\Gamma_a|}{|\Gamma_{a_{eq}}|} &=\exp\left[\frac{1}{k_B}\left(S(X;a)-S(X;a_{eq})\right)\right]\\
+&\approx \exp\left[\frac{1}{2k_B}\left(\underbrace{\left.\frac{\partial^2 S}{\partial A^2}\right|_{a_{eq}}}_{<0, \sim \mathcal{O}(N^{-1})}\right)\underbrace{(a-a_{eq})^2}_{\sim\mathcal{O}(N^2)}\right]\sim e^{-N}\text{.}
 $$
 
-In the approximation, we expand the entropy around the equilibrium value $a^*$. We can see the phase space corresponds to observable $a\neq a^*$ is exponentially small in system size. At thermodynamic limit, we found the phase space volume is dominated by the equilibrium phase space, $|\Gamma_{a^*}|$.
+In the approximation, we expand the entropy around the equilibrium value $a_{eq}$, we assume this difference is proportional with $N$. We can see the phase space corresponds to observable $a\neq a_{eq}$ is exponentially small in system size. At thermodynamic limit, we found the phase space volume is dominated by the equilibrium phase space, $|\Gamma_{a_{eq}}|$.
 
-Therefore,
+Till now, we only use some properties of the thermodynamic entropy and Boltzmann's postulate.
+
+
+Now we want to assign probability, $P(\xi)$, to every microscopic configurations, $\xi$, such that we can evaluate the expectation value of an observable $A$. A valid assignment of the probability $P(\xi)$ should guarantee the expectation value of $A$ is the observed equilibrium value of $A$, *i.e.*, $\langle A \rangle_{P(\xi)}=a_{eq}$. 
 
 $$
-\langle A \rangle =\frac{1}{|\Gamma|} \int_{\Gamma}d\xi A(\xi)\approx \frac{1}{|\Gamma_{a^*}|} \int_{\Gamma_{a^*}}d\xi A(\xi)=a^*\frac{1}{|\Gamma_{a^*}|} \int_{\Gamma_{a^*}}d\xi=a^*
+\langle A\rangle_{P(\xi)}=\sum_{\xi} P(\xi)A(\xi)=\sum_{\xi_{eq}}P(\xi_{eq})A(\xi_{eq})+\sum_{\xi', A(\xi')=a_{eq}+\delta a} P(\xi') A(\xi')
+$$
+
+If the assigned probability $P(\xi)$ is smooth in $A(\xi)$. Due to the dominating number of microscopic configurations $\xi_{eq}$, the above expression can be well approximated by
+
+$$
+\langle A\rangle_{P(\xi)}=\sum_{\xi} P(\xi)A(\xi)\approx \sum_{\xi_{eq}}P(\xi_{eq})A(\xi_{eq})\approx a_{eq} \sum_{\xi_{eq}}P(\xi_{eq})\approx a_{eq}(1-\mathcal{O}(e^{-N})))
+$$
+
+Our goal is to assign a probability $P(\xi)$ to $\xi$ such that we can use $P(\xi)$ to evaluate the observable's equlibrium value. The microcanonical ensemble is saying: why not assign equal probability to every microscopic configuration $\xi$? If we do that, indeed, we will have some configurations, $\xi'$ having $A(\xi')=a_{eq}+\delta a\neq a_{eq}$. However, that is fine, because the number of such configuration will be suppressed expenentially due to the ratio of phase space volume. So we have a very simple probability assignment,
+
+$$
+P(\xi)=\frac{1}{|\Gamma|}
+$$
+
+ but we almost loose nothing.
+
+Therefore, in continuous expression
+
+$$
+\langle A \rangle =\frac{1}{|\Gamma|} \int_{\Gamma}d\xi A(\xi)\approx \frac{1}{|\Gamma_{a_{eq}}|} \int_{\Gamma_{a_{eq}}}d\xi A(\xi)=a_{eq}\frac{1}{|\Gamma_{a_{eq}}|} \int_{\Gamma_{a_{eq}}}d\xi=a_{eq}
 $$
  which is the statement we started with at the beginning of the section.
  
 In principle, $A$ can be any extensive variable. Usually, the most important conserved quantity is the energy. So we consider the micro canonical ensemble to be the ensemble with fixed value of energy if we did not specified the conserved quantity explicitly.
+
 
 Let's try to use some examples to demonstrate the idea.
  

@@ -112,4 +112,4 @@ $$
 S=k_B\ln\mathcal{N}\text{.}
 $$
 
-Here $\mathcal{N}$ is the number of states within the window of extensive variable $[\Delta X_i-X_i,X_i]$.
+Here $\mathcal{N}$ is the "number of eigen states" within the window of extensive variable $[\Delta X_i-X_i,X_i]$. To be more preciese, $\mathcal{N}$ is the dimension of the sub-Hilbert space of our system such that extensive variable $\langle X_i\rangle \in [X_i-\Delta X_i,X_i]$.
