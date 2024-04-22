@@ -60,10 +60,10 @@ One rational conclusion we can get is: the thermodynamics provided by the two pa
 
 The above statement seems very surpricing. Can we use this understanding to get some consistency statement? For example, to understand Boltzmann's postulate?
 
-Suppose we have a system described by a Hamiltonian, $H(\lambda)$, with a control parameter $\lambda$. We can express the phase space volume as
+Suppose we have a system described by a Hamiltonian, $H(\lambda)$, with an external control parameter $\lambda$. We can express the phase space volume as
 
 $$
-|\Gamma_E|=\int_{E} d\Gamma =\int d\Gamma \Theta_{\Delta E}(H-E)\text{.}
+\Gamma_E=\int_{E} d\Gamma =\int d\Gamma \Theta_{\Delta E}(H-E)\text{.}
 $$
 
 Here, $\Theta_{\Delta E}(H-E)=1$ if the energy of the system is in the shell $[E-\Delta E, E]$.
@@ -71,6 +71,71 @@ Here, $\Theta_{\Delta E}(H-E)=1$ if the energy of the system is in the shell $[E
 The microcanonical density operator is
 
 $$
-\rho=\frac{1}{|\Gamma_E|}\sum_{\epsilon} |
+\rho=\frac{1}{\Gamma_E}\sum_{\epsilon} |
 \epsilon\rangle \Theta_{\Delta E}(\epsilon-E)\langle \epsilon|\text{.}
 $$ 
+
+Here $H|\epsilon\rangle=\epsilon|\epsilon\rangle$. The density matrix normalization condition suggest
+
+$$
+Tr\left[\rho\right]=1=\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\text{.}
+$$
+
+By control the parameter $\lambda$, we can do work to the system. Suppose we have internal energy change $\delta E$ as we vary the external parameter by $\delta \lambda$. The normalization condition should be maintained during this process, so we anticipate
+
+$$
+0=\delta\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]
+$$
+
+Here, we recall $\delta f(\vec{x})=f(\vec{x}+\delta \vec{x})-f(\vec{x})$.
+
+$$
+&\delta\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\\
+&= \left[\frac{1}{\Gamma_{E+\delta E}}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon+\delta \epsilon-(E+\delta E))\right]
+-\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]
+$$
+
+Now we can expand everything to leading order, we have
+
+$$
+RHS
+&=\left[\frac{-\delta \Gamma_E}{\Gamma_E^2}\right]\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\\
+&+\left[\frac{1}{\Gamma_E}\right]\left[\sum_{\epsilon} \frac{\partial}{\partial \epsilon}\Theta_{\Delta E}(\epsilon-E)\delta \epsilon+\sum_{\epsilon} \frac{\partial}{\partial E}\Theta_{\Delta E}(\epsilon-E)\delta E \right]+\mathcal{O}(\delta^2(\cdots))
+$$
+
+We can combine the second term which gives us
+
+$$
+\frac{\delta \Gamma_E}{\Gamma_E}=\frac{1}{\Gamma_E}\sum_{\epsilon} \frac{\partial}{\partial (-E)}\Theta_{\Delta E}(\epsilon-E)(\delta \epsilon-\delta E) 
+$$
+
+The normalization condition suggests
+
+$$
+&\partial_E\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]=0\\
+&=\frac{1}{\Gamma_E}\partial_E\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]+\left(-\Gamma_E^{-2}\right)\partial_E \Gamma_E\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\text{.}
+$$
+
+This identity gives
+
+$$
+\frac{1}{\Gamma_E}\frac{\partial}{\partial E}\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]=\frac{1}{\Gamma_E^2}\frac{\partial \Gamma_E}{\partial E}\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\text{.}
+$$
+
+Most microscopic configurations give identical thermodynamics, therefore $\delta \epsilon$ and $\delta' W$(the work done by tuning $\delta \lambda$) are identical for all microscopic configurations.
+
+The above equality gives
+
+$$
+\delta log(\Gamma_E)&=(\delta E-\delta' W)\frac{1}{\Gamma_E}\sum_{\epsilon} \left(\frac{\partial}{\partial E}\right)\left(\Theta_{\Delta E}(\epsilon-E)\right)\\
+&=\delta' Q \frac{1}{\Gamma_E}\frac{\partial \Gamma_E}{\partial E}\left(\frac{1}{\Gamma_E}\sum_{\epsilon}\Theta_{\Delta E}(\epsilon-E)\right)\\
+&=\delta' Q \frac{\partial log \Gamma_E}{\partial E}\left(1\right)\text{.}
+$$
+
+For ideal gas, we can explicitly calculate the quantitity $\frac{\partial \Gamma_E}{\partial E}=\frac{3N}{2E}=(k_BT)^{-1}$. Also, we know $\delta S=\delta' Q/T$. Comparing those relations, we have the Boltzmann's conjucture
+
+$$
+\delta S=k_B\delta log \Gamma_E\text{ i.e.} S=k_Blog \Gamma_E\text{.}
+$$
+
+The seemly conter intuitive statement that every microscopic configurations gives the same thermodynamics can indeed lead to the Boltzmann's conjucture. However, this is just a self-consistency check. The statement seems plausible, however the above derivation is not a mathematically solid proof for the statement.
