@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -637,7 +637,14 @@ The time average of observable <span class="math notranslate nohighlight">\(O\)<
 <li><p>(F2) The observation time scale for thermodynamic coordinates(extensive macroscopic observables) is very short.</p></li>
 </ul>
 <p>As we have discussed, (F2) suggest our system from an arbitary initial condition(<span class="math notranslate nohighlight">\(\xi_a\)</span>) will only visit its neighboring configurations, <span class="math notranslate nohighlight">\(\xi\in n(\xi_a)\)</span>, (a little corner of the accessible phase space) in our lab. (F1) suggest that if we wait long enough and perform the same measurement again, the same measurement will give us the same result. However, this time, our system will start in another corner of the accessible phase space with different initial condition (<span class="math notranslate nohighlight">\(\xi_b\)</span>), and again it will only visit its neighboring configurations, <span class="math notranslate nohighlight">\(\xi\in n(\xi_b)\)</span>, during the measurment time.</p>
-<p>One rational conclusion we can get is: the thermodynamics provided by the two patches of phase space, <span class="math notranslate nohighlight">\(n(\xi_a)\)</span> and <span class="math notranslate nohighlight">\(n(\xi_b)\)</span>, are identical. We never specify how big is the patch, <span class="math notranslate nohighlight">\(\xi_a\)</span> and <span class="math notranslate nohighlight">\(\xi_b\)</span> are also choosen in a arbitary fashion, but we know the thermodynamics is the same in general. A very bold but reasonalbe guess is: almost every configurations give the same thermodynamics. To know thermodynamics, we only need to sample a single microstate. In classial mechanics, there is no nature energy unit to isolate a configuration, so we choose a window of energy <span class="math notranslate nohighlight">\([E-\Delta E,E]\)</span> and sample all those states in microcanonical ensemble, we then put <span class="math notranslate nohighlight">\(\Delta E\to0\)</span> to reach the single state ensemble. In quantum system, the energy is quantized, we can really select a single state and use it to construct thermodynamics.</p>
+<p>One rational conclusion we can get is: the thermodynamics provided by the two patches of phase space, <span class="math notranslate nohighlight">\(n(\xi_a)\)</span> and <span class="math notranslate nohighlight">\(n(\xi_b)\)</span>, are identical. We never specify how big is the patch, <span class="math notranslate nohighlight">\(\xi_a\)</span> and <span class="math notranslate nohighlight">\(\xi_b\)</span> are also choosen in a arbitary fashion, but we know the thermodynamics is the same in general. A very bold but reasonalbe guess is: almost every configurations give the same thermodynamics.</p>
+<figure class="align-default" id="single-state-ensemble-fig">
+<a class="reference internal image-reference" href="_images/single_state_ensemble.pdf"><img alt="_images/single_state_ensemble.pdf" src="_images/single_state_ensemble.pdf" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Schematic picture for identical thermodynamics for every microscopic configurations.</span><a class="headerlink" href="#single-state-ensemble-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To know thermodynamics, we only need to sample a single microstate. In classial mechanics, there is no nature energy unit to isolate a configuration, so we choose a window of energy <span class="math notranslate nohighlight">\([E-\Delta E,E]\)</span> and sample all those states in microcanonical ensemble, we then put <span class="math notranslate nohighlight">\(\Delta E\to0\)</span> to reach the single state ensemble. In quantum system, the energy is quantized, we can really select a single state and use it to construct thermodynamics.</p>
 </section>
 <section id="derivation-of-boltzmann-s-postulate">
 <h2>Derivation of Boltzmann’s postulate<a class="headerlink" href="#derivation-of-boltzmann-s-postulate" title="Permalink to this headline">#</a></h2>
@@ -723,7 +730,7 @@ RHS
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./."
         },
         predefinedOutput: true

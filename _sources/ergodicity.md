@@ -54,7 +54,16 @@ One possible way out is to notice two important phenomenological constraints:
 
 As we have discussed, (F2) suggest our system from an arbitary initial condition($\xi_a$) will only visit its neighboring configurations, $\xi\in n(\xi_a)$, (a little corner of the accessible phase space) in our lab. (F1) suggest that if we wait long enough and perform the same measurement again, the same measurement will give us the same result. However, this time, our system will start in another corner of the accessible phase space with different initial condition ($\xi_b$), and again it will only visit its neighboring configurations, $\xi\in n(\xi_b)$, during the measurment time.
 
-One rational conclusion we can get is: the thermodynamics provided by the two patches of phase space, $n(\xi_a)$ and $n(\xi_b)$, are identical. We never specify how big is the patch, $\xi_a$ and $\xi_b$ are also choosen in a arbitary fashion, but we know the thermodynamics is the same in general. A very bold but reasonalbe guess is: almost every configurations give the same thermodynamics. To know thermodynamics, we only need to sample a single microstate. In classial mechanics, there is no nature energy unit to isolate a configuration, so we choose a window of energy $[E-\Delta E,E]$ and sample all those states in microcanonical ensemble, we then put $\Delta E\to0$ to reach the single state ensemble. In quantum system, the energy is quantized, we can really select a single state and use it to construct thermodynamics.
+One rational conclusion we can get is: the thermodynamics provided by the two patches of phase space, $n(\xi_a)$ and $n(\xi_b)$, are identical. We never specify how big is the patch, $\xi_a$ and $\xi_b$ are also choosen in a arbitary fashion, but we know the thermodynamics is the same in general. A very bold but reasonalbe guess is: almost every configurations give the same thermodynamics. 
+
+```{figure} /images/single_state_ensemble.pdf
+---
+width: 750px
+name: single_state_ensemble-fig
+---
+Schematic picture for identical thermodynamics for every microscopic configurations.
+```
+To know thermodynamics, we only need to sample a single microstate. In classial mechanics, there is no nature energy unit to isolate a configuration, so we choose a window of energy $[E-\Delta E,E]$ and sample all those states in microcanonical ensemble, we then put $\Delta E\to0$ to reach the single state ensemble. In quantum system, the energy is quantized, we can really select a single state and use it to construct thermodynamics.
 
 ## Derivation of Boltzmann's postulate
 
