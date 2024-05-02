@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Epilogue" href="biblio.html" />
-    <link rel="prev" title="Density matrix" href="density_matrix.html" />
+    <link rel="next" title="Other interacting free systems" href="free_systems.html" />
+    <link rel="prev" title="Density operator formalism" href="density_matrix.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="density_matrix.html">
-     Density matrix
+     Density operator formalism
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -280,6 +280,38 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="free_systems.html">
+   Other interacting free systems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oscillators.html">
+     Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fermion_Boson.html">
+     Free Fermions and Bosons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2nd_quantization.html">
+     Second quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phonon_photon.html">
+     Phonon and photon
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="biblio.html">
    Epilogue
@@ -296,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="exercise_0.html">
    Exercise
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -338,8 +370,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="numerical_tools.html">
    Numerical tools
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -594,7 +626,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ergodicity-do-we-really-need-it">
 <h1>Ergodicity (Do we really need it?)<a class="headerlink" href="#ergodicity-do-we-really-need-it" title="Permalink to this headline">#</a></h1>
-<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="md_files/markdown.html#id4" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. So the idea of ergodicity provides a way to connect the dynamical problem to a statistical problem.</p>
+<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="md_files/markdown.html#id4" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> <span id="id2">[<a class="reference internal" href="md_files/markdown.html#id25" title="Yoshitsugu Oono. Perspectives on Statistical Thermodynamics. Cambridge University Press, 2017.">Oon17</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. So the idea of ergodicity provides a way to connect the dynamical problem to a statistical problem.</p>
 <p>Actually, we have introduce the concept of microcanonical ensemble even without addressing the ergodicity during the lecture. The reason that we introduce the concept of microcanonical ensemble in that order is to emphasis that there are different ways to formulate statistical mechanics. The route we take during the lecture basically relies on the structure of phase space volume which is a result due to thermodynamics and Boltzmann’s postulate.</p>
 <p>Once we have establish the microcanonical ensemble, then statistical mechanics can be built on top of it. Statistical mechanics also works phenomenally well. Here, we will have a short discussion about the idea of ergodicity and point out some problems/solutions that we might encountered when establishing statistical mechanics based on ergodicity.</p>
 <section id="ergodicity-and-ensemble-average">
@@ -749,13 +781,13 @@ RHS
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Density matrix</p>
+            <p class="prev-next-title">Density operator formalism</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="biblio.html" title="next page">
+    <a class='right-next' id="next-link" href="free_systems.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Epilogue</p>
+        <p class="prev-next-title">Other interacting free systems</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Density matrix &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+    <title>Density operator formalism &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ergodicity (Do we really need it?)" href="ergodicity.html" />
@@ -261,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Density matrix
+     Density operator formalism
     </a>
    </li>
    <li class="toctree-l2">
@@ -278,6 +280,38 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="free_systems.html">
+   Other interacting free systems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oscillators.html">
+     Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fermion_Boson.html">
+     Free Fermions and Bosons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2nd_quantization.html">
+     Second quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phonon_photon.html">
+     Phonon and photon
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="biblio.html">
    Epilogue
@@ -294,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="exercise_0.html">
    Exercise
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -336,8 +370,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="numerical_tools.html">
    Numerical tools
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -521,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Density matrix</h1>
+                <h1>Density operator formalism</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -533,8 +567,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="density-matrix">
-<h1>Density matrix<a class="headerlink" href="#density-matrix" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="density-operator-formalism">
+<h1>Density operator formalism<a class="headerlink" href="#density-operator-formalism" title="Permalink to this headline">#</a></h1>
+<p>Here we give a brief review of the density operator fromalism invented by J. von Neumann in 1927. In statistical mechanics, we discuss how to assign probability to the microscopic configuration of our system. Here the probability is a classical probability given by the ensemble theory. On the otherhand, when we are studying quantum system, the quantum mechanics has a build in probability description which should be distinct with the probability given by the ensemble theory. The quantum mechanics probability description is build on top of the interpretation of wave function. The density operator neatly encapsulates the two concepts in a compact and clear framework.</p>
+<p>The density operator is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}=\sum_j P_j|\psi_j\rangle\langle \psi_j|\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(P_j\)</span> is the probability, given from the ensemble theory, of having a microscopic configuration described by a many-body wave function <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span>. <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span> is the many-body wave function that takes care of the quantum part of the probability interpretation. In general, <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span> need not be orthogonal. A well defined density operator provides the following information:</p>
+<ol class="simple">
+<li><p>The set of possible states <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span>.</p></li>
+<li><p>The classical probability, <span class="math notranslate nohighlight">\(P_j\)</span>, for the ensemble to have state <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span>.</p></li>
+</ol>
+<p>Let’s understand the density operator bits by bits. If we call an ensemble with only one possible state <span class="math notranslate nohighlight">\(|\psi_p\rangle\)</span> a pure ensemble (The simplest case!). The density operator for the pure ensemble with wave function (In general, the wave function need not be a many-body wave function, for this lecture, we usually will care about the many-body wave function.) <span class="math notranslate nohighlight">\(|\psi_p\rangle\)</span> will simply be</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}_p=\sum_j \delta_{p,j}|\psi_j\rangle\langle\psi_j|=|\psi_p\rangle\langle \psi_p|\text{.}
+\]</div>
+<p>If we represent the operator <span class="math notranslate nohighlight">\(\hat{\rho}_p\)</span> in some complete basis, <span class="math notranslate nohighlight">\(|\alpha_m\rangle\)</span>, given by observable <span class="math notranslate nohighlight">\(\hat{A}\)</span>. We will have</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\hat{\rho}_p\right)_{\alpha_m,\alpha_n}=\langle \alpha_m|\hat{\rho}_p|\alpha_n\rangle=\left(c^{(p)}_{\alpha_m}\right)^*c^{(p)}_{\alpha_n}\text{.}
+\]</div>
+<p>The normalization condition of <span class="math notranslate nohighlight">\(|\psi_p\rangle\)</span> suggests <span class="math notranslate nohighlight">\(Tr[\hat{\rho}_p]=\sum_{m}|c^{(p)}_{\alpha_m}|^2=1\)</span>.</p>
+<p>The ensemble with more than one possible states is called a mixed ensemble, it can be understood as a collection of pure ensembles with specified probability. The wave function normalization condition plus the normalization of the probability assignment gives</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_j P_j\underbrace{\sum_m \langle \alpha_m|\hat{\rho}_j|\alpha_m\rangle}_{=1}=\sum_j\sum_m P_j|c^{(j)}_{\alpha_m}|^2=Tr[\hat{\rho}]=1\text{.}
+\]</div>
+<p>In the above expression, I explicitly show the structure of <span class="math notranslate nohighlight">\(P_j|c^{(j)}_{\alpha_m}|^2\)</span>. That simply means: the probability for our mixed ensemble to have observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> with measured value of <span class="math notranslate nohighlight">\(\alpha_m\)</span> is the product of classical probability <span class="math notranslate nohighlight">\(P_j\)</span>, the chances that the state we pick from the mixed ensemble to be <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span>, times the quantum probability <span class="math notranslate nohighlight">\(|c^{(j)}_{\alpha_m}|^2\)</span>, the probability that the system collapes from <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span> to <span class="math notranslate nohighlight">\(|\alpha_m\rangle\)</span> after the measurement. The diagonal terms basically contains those information.</p>
+<p>We can next consider the off-diagonal terms of density operators.</p>
 </section>
 
     <script type="text/x-thebe-config">
