@@ -1,6 +1,8 @@
+(Exercise_1)=
 # Exercise 1
 
 ```{admonition} Problem 1 (Some Gaussian integrals)
+:name: Prob_1-1
 :class: tip
 
 1. Evaluate the simple generalization of the Gaussian integral we discussed in the lecture.
@@ -31,6 +33,7 @@ $$
 
 
 ```{admonition} Problem 2 (Experiment for central limit theorem)
+:name: Prob_1-2
 :class: tip
 
 Before we proof the central limit theorem, let's try to do a simple numerical experiment. Consider a random variable $X$ with probability distribution function $P(X)$. In general, we require $P(X)$ having a well defined mean and variance. However, to construct a simplest nontrivial mathematical experiment. Let's take $P(X)$ to be a box distribution ranging from $-1$ to $1$. That is, $P(X)=\frac{1}{2}$ if $X\in[-1,1]$, else $P(X)=0$. The distribution obviously have a well defined mean and variance (Why? Convince yourself it's true). Now, lets try to calculate the following quantity and plot it's distribution function with the Gaussian function with the same variance.
@@ -45,6 +48,7 @@ Please notice how fast the sum $S_N$ approaches a Gaussian distribution.
 
 
 ```{admonition} Problem 3 (Universal behavior of the sum of random variables-- The central limit theorem)
+:name: Prob_1-3
 :class: tip
 
 Consider independent random variables $\left\{ x_j \right\}$ with a single variable distribution function $P_1(x_j)$. We want to understand the distribution function of the sum of the random variables. That is, we want to derive the distribution function of $X\equiv\sum_{j=1}^{N}x_j$. We are interested in the case where $N$ is large. We can formally write it as
@@ -56,8 +60,8 @@ $$
 Here $\delta(x)$ is the Dirac delta function. The Fourier transform of the distribution function is
 
 $$
-	\widetilde{P_N}(k)&=& \int_{-\infty}^{\infty}dX e^{-ikX}\left[ \int_{-\infty}^{\infty}d{x_1}\dots \int_{-\infty}^{\infty}d{x_N} P_1(x_1)P_1(x_2)\dots P_1(x_N) \delta(x_1+x_2+\dots+x_N-X) \right]\nonumber\\
-		&=& \left[ \widetilde{P_1}(k) \right]^N
+	\widetilde{P_N}(k)&= \int_{-\infty}^{\infty}dX e^{-ikX}\left[ \int_{-\infty}^{\infty}d{x_1}\dots \int_{-\infty}^{\infty}d{x_N} P_1(x_1)P_1(x_2)\dots P_1(x_N) \delta(x_1+x_2+\dots+x_N-X) \right]\nonumber\\
+		&= \left[ \widetilde{P_1}(k) \right]^N
 $$
 	
 , here
@@ -93,19 +97,20 @@ $$
 Therefore, we have
 
 $$
-	P_N(X)&\approx&\frac{1}{2\pi} \int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX}\left[ 1+C_3k^3+\dots \right]dk\nonumber\\
-	&=& \left[ 1+iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3+\dots \right]\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX} dk
+	P_N(X)&\approx\frac{1}{2\pi} \int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX}\left[ 1+C_3k^3+\dots \right]dk\nonumber\\
+	&= \left[ 1+iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3+\dots \right]\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX} dk
 $$
 
 As mentioned before, the last integral is a Gaussian integral that we know how to perform. Complete the square and derive the result of $P_N(X)$ to leading order (ignoring the $iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3$ term and beyond.). (Furthermore, you can ask: how the higher-order correction scales as a function of $N$, but this will be left as a challenge that is beyond this homework problem.)
 		
-3. After we answered the above questions, we basically derived the \emph{central limit theorem}. That is, the distribution function for the sum of random variables from a distribution function $P_1(x)$ is a Gaussian. That is a very general result. What conditions does $P_1(x)$ need to satisfy to apply the central limit theorem? Will it work when $P_1(x)$ is a Gaussian distribution? Will it work when $P_1(x)$ is a Cauchy distribution?
+3. After we answered the above questions, we basically derived the *central limit theorem*. That is, the distribution function for the sum of random variables from a distribution function $P_1(x)$ is a Gaussian. That is a very general result. What conditions does $P_1(x)$ need to satisfy to apply the central limit theorem? Will it work when $P_1(x)$ is a Gaussian distribution? Will it work when $P_1(x)$ is a Cauchy distribution?
 
 
 ```
 
 
 ```{admonition} Problem 4 (Freely Jointed Chain--Gaussian model)
+:name: Prob_1-4
 :class: tip
 
 Polymers are large(high molar mass) molecules composed of a large number of monomers bonded together to form a chain. In reality, the monomers are bounded covalently. That is, the potential energy between two monomers should be a complex function of the bonding angle between two nearby monomers. Let's make some assumptions to simplify our problem which leads to the freely jointed model. (We might over simplify the problem but let's just try it first to get a feeling about what kind of problem we are facing. Then we can ask how to put back more ingredients to make our analysis more realistic.)

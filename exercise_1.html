@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
 </ul>
 </li>
 </ul>
@@ -426,8 +427,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1">
-<h1>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h1>
-<div class="tip admonition">
+<span id="id1"></span><h1>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition" id="prob-1-1">
 <p class="admonition-title">Problem 1 (Some Gaussian integrals)</p>
 <ol class="arabic">
 <li><p>Evaluate the simple generalization of the Gaussian integral we discussed in the lecture.</p>
@@ -457,7 +458,7 @@ One should find the result that <span class="math notranslate nohighlight">\(G(x
 </li>
 </ol>
 </div>
-<div class="tip admonition">
+<div class="tip admonition" id="prob-1-2">
 <p class="admonition-title">Problem 2 (Experiment for central limit theorem)</p>
 <p>Before we proof the central limit theorem, let’s try to do a simple numerical experiment. Consider a random variable <span class="math notranslate nohighlight">\(X\)</span> with probability distribution function <span class="math notranslate nohighlight">\(P(X)\)</span>. In general, we require <span class="math notranslate nohighlight">\(P(X)\)</span> having a well defined mean and variance. However, to construct a simplest nontrivial mathematical experiment. Let’s take <span class="math notranslate nohighlight">\(P(X)\)</span> to be a box distribution ranging from <span class="math notranslate nohighlight">\(-1\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. That is, <span class="math notranslate nohighlight">\(P(X)=\frac{1}{2}\)</span> if <span class="math notranslate nohighlight">\(X\in[-1,1]\)</span>, else <span class="math notranslate nohighlight">\(P(X)=0\)</span>. The distribution obviously have a well defined mean and variance (Why? Convince yourself it’s true). Now, lets try to calculate the following quantity and plot it’s distribution function with the Gaussian function with the same variance.</p>
 <ol class="arabic simple">
@@ -466,7 +467,7 @@ One should find the result that <span class="math notranslate nohighlight">\(G(x
 </ol>
 <p>Please notice how fast the sum <span class="math notranslate nohighlight">\(S_N\)</span> approaches a Gaussian distribution.</p>
 </div>
-<div class="tip admonition">
+<div class="tip admonition" id="prob-1-3">
 <p class="admonition-title">Problem 3 (Universal behavior of the sum of random variables– The central limit theorem)</p>
 <p>Consider independent random variables <span class="math notranslate nohighlight">\(\left\{ x_j \right\}\)</span> with a single variable distribution function <span class="math notranslate nohighlight">\(P_1(x_j)\)</span>. We want to understand the distribution function of the sum of the random variables. That is, we want to derive the distribution function of <span class="math notranslate nohighlight">\(X\equiv\sum_{j=1}^{N}x_j\)</span>. We are interested in the case where <span class="math notranslate nohighlight">\(N\)</span> is large. We can formally write it as</p>
 <div class="math notranslate nohighlight">
@@ -476,8 +477,8 @@ One should find the result that <span class="math notranslate nohighlight">\(G(x
 <p>Here <span class="math notranslate nohighlight">\(\delta(x)\)</span> is the Dirac delta function. The Fourier transform of the distribution function is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	\widetilde{P_N}(k)&amp;=&amp; \int_{-\infty}^{\infty}dX e^{-ikX}\left[ \int_{-\infty}^{\infty}d{x_1}\dots \int_{-\infty}^{\infty}d{x_N} P_1(x_1)P_1(x_2)\dots P_1(x_N) \delta(x_1+x_2+\dots+x_N-X) \right]\nonumber\\
-		&amp;=&amp; \left[ \widetilde{P_1}(k) \right]^N
+	\widetilde{P_N}(k)&amp;= \int_{-\infty}^{\infty}dX e^{-ikX}\left[ \int_{-\infty}^{\infty}d{x_1}\dots \int_{-\infty}^{\infty}d{x_N} P_1(x_1)P_1(x_2)\dots P_1(x_N) \delta(x_1+x_2+\dots+x_N-X) \right]\nonumber\\
+		&amp;= \left[ \widetilde{P_1}(k) \right]^N
 \end{split}\]</div>
 <p>, here</p>
 <div class="math notranslate nohighlight">
@@ -508,15 +509,15 @@ We can use the following trick to express this integral in another form. In <spa
 <p>Therefore, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-	P_N(X)&amp;\approx&amp;\frac{1}{2\pi} \int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX}\left[ 1+C_3k^3+\dots \right]dk\nonumber\\
-	&amp;=&amp; \left[ 1+iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3+\dots \right]\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX} dk
+	P_N(X)&amp;\approx\frac{1}{2\pi} \int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX}\left[ 1+C_3k^3+\dots \right]dk\nonumber\\
+	&amp;= \left[ 1+iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3+\dots \right]\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX} dk
 \end{split}\]</div>
 <p>As mentioned before, the last integral is a Gaussian integral that we know how to perform. Complete the square and derive the result of <span class="math notranslate nohighlight">\(P_N(X)\)</span> to leading order (ignoring the <span class="math notranslate nohighlight">\(iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3\)</span> term and beyond.). (Furthermore, you can ask: how the higher-order correction scales as a function of <span class="math notranslate nohighlight">\(N\)</span>, but this will be left as a challenge that is beyond this homework problem.)</p>
 <ol class="arabic simple" start="3">
-<li><p>After we answered the above questions, we basically derived the \emph{central limit theorem}. That is, the distribution function for the sum of random variables from a distribution function <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian. That is a very general result. What conditions does <span class="math notranslate nohighlight">\(P_1(x)\)</span> need to satisfy to apply the central limit theorem? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian distribution? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Cauchy distribution?</p></li>
+<li><p>After we answered the above questions, we basically derived the <em>central limit theorem</em>. That is, the distribution function for the sum of random variables from a distribution function <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian. That is a very general result. What conditions does <span class="math notranslate nohighlight">\(P_1(x)\)</span> need to satisfy to apply the central limit theorem? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian distribution? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Cauchy distribution?</p></li>
 </ol>
 </div>
-<div class="tip admonition">
+<div class="tip admonition" id="prob-1-4">
 <p class="admonition-title">Problem 4 (Freely Jointed Chain–Gaussian model)</p>
 <p>Polymers are large(high molar mass) molecules composed of a large number of monomers bonded together to form a chain. In reality, the monomers are bounded covalently. That is, the potential energy between two monomers should be a complex function of the bonding angle between two nearby monomers. Let’s make some assumptions to simplify our problem which leads to the freely jointed model. (We might over simplify the problem but let’s just try it first to get a feeling about what kind of problem we are facing. Then we can ask how to put back more ingredients to make our analysis more realistic.)</p>
 <ul>

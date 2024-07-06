@@ -326,4 +326,3 @@ $$
 #### What we know and what we don't know...
 
 Now we know how to solve a diffusion equation and how it reaches equilibrium. However, for generic closed classical or quantum systems, how the system reaches equilibrium is still an open question. We will not elaborate more on this fascinating research problem. Instead, we will refer our readers to other sources that discuss these interesting topics ( see, *e.g.* Thermalization and many-body localization, see {cite:p}`srednicki1994chaos` and {cite:p}`nandkishore2014many` )
-

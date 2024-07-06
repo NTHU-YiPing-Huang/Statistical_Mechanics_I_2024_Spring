@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One dimensional random walk &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+    <title>Guide to Exercise 1 &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
   
   
   
@@ -61,13 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '1DRW';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guide_exer_1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Drunkard’s walk" href="drunkards_walk.html" />
-    <link rel="prev" title="Random walk and emergent properties" href="random_walk_and_emergent_properties.html" />
+    <link rel="next" title="Thermodynamics and statistical mechanics" href="Rev_thermodynamics.html" />
+    <link rel="prev" title="The diffusion equation" href="diffusion_eq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -170,10 +168,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Guide to Exercise 1</a></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1DRW.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fguide_exer_1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/1DRW.md" target="_blank"
+      <li><a href="_sources/guide_exer_1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,9 +399,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -414,20 +410,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>One dimensional random walk</h1>
+    <h1>Guide to Exercise 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-coin-flipping-game">The coin-flipping game</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-back-and-forth">Walking back and forth</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -437,63 +424,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="one-dimensional-random-walk">
-<h1>One dimensional random walk<a class="headerlink" href="#one-dimensional-random-walk" title="Permalink to this headline">#</a></h1>
-<div class="section" id="the-coin-flipping-game">
-<h2>The coin-flipping game<a class="headerlink" href="#the-coin-flipping-game" title="Permalink to this headline">#</a></h2>
-<p>Let’s start our discussion by understanding the results of successive coin flipping sequences. Suppose we have an unbiased coin that has an equal probability of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> to have heads or tails. To simplify our mathematical analysis, we can use a variable <span class="math notranslate nohighlight">\(l_j=+1,-1\)</span> to denote the outcome, heads or tails, of the <span class="math notranslate nohighlight">\(j\)</span>-th flip.
-In each trial, we flip the coin <span class="math notranslate nohighlight">\(N\)</span> times. So we can use a binary sequence, <span class="math notranslate nohighlight">\(\{l_1,l_2,\cdots, l_N\}\)</span> to represent the result of the trial. So the first question we can ask is: how many different results could we get? The answer is simple; we will have <span class="math notranslate nohighlight">\(\underbrace{2\times2\times\cdots\times2}_{N\text{ of them}}=2^N\)</span>.</p>
-<p>The binary sequence is not very informative. We can ask a further question: what quantity should we calculate to know something about those results? One quantity is</p>
-<p><span class="math notranslate nohighlight">\(S_N=\sum_{j=1}^N l_j=\text{number of heads}-\text{number of tails}\)</span>.</p>
-<p>By evaluating <span class="math notranslate nohighlight">\(S_N\)</span>, we immediately get some information: whether we have more heads or more tails. When <span class="math notranslate nohighlight">\(S_N&gt;0\)</span> we have more heads; when <span class="math notranslate nohighlight">\(S_N&lt;0\)</span> we have more tails. The value of <span class="math notranslate nohighlight">\(S_N\)</span> thus can be considered as a simple but useful property for the <span class="math notranslate nohighlight">\(k\)</span>-th trial <span class="math notranslate nohighlight">\(\{l_j^{(k)}\}\)</span>.</p>
-<p>Now, if we have <span class="math notranslate nohighlight">\(M\)</span> trials, we have <span class="math notranslate nohighlight">\(k=1\sim M\)</span>. What statistical statement can we make when <span class="math notranslate nohighlight">\(M\)</span> is a large number?</p>
-<div class="tip admonition">
-<p class="admonition-title">What?</p>
-<p>What do we mean by <span class="math notranslate nohighlight">\(M\)</span> is large? How large is large enough?</p>
-</div>
-<p>One of the simplest statistical quantities is the average or the expectation value of <span class="math notranslate nohighlight">\(S_N\)</span>.
-We will use the notation <span class="math notranslate nohighlight">\(\langle A \rangle\)</span> to denote the average or the expectation value of <span class="math notranslate nohighlight">\(A\)</span>. Mathematically, it is defined as</p>
-<div class="math notranslate nohighlight">
-\[
-  \langle A\rangle=\sum_{a\in A} \underbrace{P(a)}_{\text{probability of }a} a
-\]</div>
-<p>We can evaluate a simple example when <span class="math notranslate nohighlight">\(N=1\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-  S_1=l_1; \langle S_1\rangle=\frac{1}{2}(+1)+\frac{1}{2}(-1)
-\]</div>
-<p>Immediately we can notice <span class="math notranslate nohighlight">\(\langle S_N\rangle=0\)</span> even when <span class="math notranslate nohighlight">\(N\neq1\)</span> because we have equal probability for <span class="math notranslate nohighlight">\(S_N&gt;0\)</span> and <span class="math notranslate nohighlight">\(S_N&lt;0\)</span>. <span class="math notranslate nohighlight">\(S_N\)</span> gives us the information whether we have more heads or tails. <span class="math notranslate nohighlight">\(\langle S_N\rangle=0\)</span> tells us that the probability to have more heads is equal to the probability to have more tails.</p>
-</div>
-<div class="section" id="walking-back-and-forth">
-<h2>Walking back and forth<a class="headerlink" href="#walking-back-and-forth" title="Permalink to this headline">#</a></h2>
-<p>Now, let’s try to twist the coin-flipping game a little bit. Suppose we hold a coin and move on a one-dimensional line starting from the origin. We decide our move according to the result of the coin-flipping game. When we got heads, we moved forward; when we got tails, we moved backward. Here we define <span class="math notranslate nohighlight">\(X_N=S_N=\sum_{j=1}^N l_j\)</span> just to remind ourselves that we are discussing the position after <span class="math notranslate nohighlight">\(N\)</span> steps.</p>
-<div class="figure align-default" id="drw-fig">
-<a class="reference internal image-reference" href="_images/1DRW.pdf"><img alt="_images/1DRW.pdf" src="_images/1DRW.pdf" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">One-dimensional random walk.</span><a class="headerlink" href="#drw-fig" title="Permalink to this image">#</a></p>
-</div>
-<p>According to the coin-flipping game, we know the expectation value of our position is 0. In this setting, we immediately realize the useful quantity to characterize our motion is the distance with respect to the origin after <span class="math notranslate nohighlight">\(N\)</span> steps. We can evaluate the expectation value of the absolute value of our position, <span class="math notranslate nohighlight">\(\langle |X_N|\rangle\)</span>. Or, equivalently, we can evaluate the expectation value of the square of our position, <span class="math notranslate nohighlight">\(\langle X_N^2\rangle\)</span>. The root mean square(r.m.s.) of <span class="math notranslate nohighlight">\(X_N\)</span>, <span class="math notranslate nohighlight">\(\sigma_{X_N}\equiv\sqrt{\langle X_N^2\rangle}\)</span>, is a measure of how far away we are from the origin after <span class="math notranslate nohighlight">\(N\)</span> steps.</p>
-<p>Again, it is always helpful to evaluate some of them to have a feeling about what <span class="math notranslate nohighlight">\(\langle X_N^2\rangle\)</span> is.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \langle X_1^2\rangle&amp;=\frac{1}{2}(+1)^2+\frac{1}{2}(-1)^2=1 \\
-  \langle X_2^2\rangle&amp;=\frac{1}{4}(+2)^2+\frac{1}{4}(1-1)^2+\frac{1}{4}(-1+1)^2+\frac{1}{4}(-2)^2=2
-\end{split}\]</div>
-<p>Similarly, one finds <span class="math notranslate nohighlight">\(\langle X_3^2\rangle=3\)</span>. It is very tempting to ask: can we show <span class="math notranslate nohighlight">\(\langle X_N^2\rangle=N\)</span> in general? The answer is yes, we can use mathematical induction. (Assuming the conclusion is true for <span class="math notranslate nohighlight">\(s-1\)</span>, we want to prove it is also true for <span class="math notranslate nohighlight">\(s\)</span>.)</p>
-<p>That is, we assume</p>
-<div class="math notranslate nohighlight">
-\[
-  \langle X_{s-1}^2\rangle =s-1
-\]</div>
-<p>is true.
-We want to show that <span class="math notranslate nohighlight">\(\langle X_s^2\rangle=s\)</span> using the above assumption.
-We can show that easily by noticing</p>
-<div class="math notranslate nohighlight">
-\[
-  \langle X_s^2\rangle\equiv\langle (X_{s-1}+l_s)^2\rangle=\underbrace{\langle X_{s-1}^2\rangle}_{=s-1}+\underbrace{\langle l_s^2\rangle}_{=1}+2\underbrace{\langle X_{s-1}l_{s}\rangle}_{=0}=s.
-\]</div>
-<p><span class="math notranslate nohighlight">\(\langle X_{s-1}l_{s}\rangle=0\)</span> since the result of <span class="math notranslate nohighlight">\(l_s\)</span> is independent of <span class="math notranslate nohighlight">\(X_{s-1}\)</span>. Therefore, the product has an equal probability to be positive or negative.</p>
-<p>So we know the r.m.s. of <span class="math notranslate nohighlight">\(X_N\)</span> is <span class="math notranslate nohighlight">\(\sigma_{X_N}=\sqrt{\langle X_N^2\rangle}=\sqrt{N}\)</span>.</p>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="guide-to-exercise-1">
+<h1>Guide to Exercise 1<a class="headerlink" href="#guide-to-exercise-1" title="Permalink to this headline">#</a></h1>
+<p>Now we have our <a class="reference internal" href="exercise_1.html#exercise-1"><span class="std std-ref">Exercise 1</span></a>! The <a class="reference internal" href="exercise_1.html#prob-1-1"><span class="std std-ref">Problem 1</span></a> is a simple warm up to do some Gaussian integrals and related Fourier transform.
+One of the important theorem in statistics is the <em>central limit theorem</em>. The <a class="reference internal" href="exercise_1.html#prob-1-2"><span class="std std-ref">Problem 2</span></a> will guide you to get a feeling about what that is by doing a special example that one can tract how cetral limit theorem emerges gradually. After the problem, one should be able to carry out the analytic/ numerical calculation exactly. Also, one can notice how fast the result approaches the conclusion of central limit theorem. At the same time, one can also notice the limitation of this brute force approach.
+Therefore, we design <a class="reference internal" href="exercise_1.html#prob-1-3"><span class="std std-ref">Problem 3</span></a> where we can carry out the “proof” of the central limit theorem. Here, one should focus on the requirements to apply the central limit theorem and its conclusion.
+After that, in <a class="reference internal" href="exercise_1.html#prob-1-4"><span class="std std-ref">Problem 4</span></a>, we apply the central limit theorem in a simplified model of polymer physics where one can develop the connection between a random walk problem to polymer physics.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -528,20 +464,20 @@ We can show that easily by noticing</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="random_walk_and_emergent_properties.html"
+       href="diffusion_eq.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Random walk and emergent properties</p>
+        <p class="prev-next-title">The diffusion equation</p>
       </div>
     </a>
     <a class="right-next"
-       href="drunkards_walk.html"
+       href="Rev_thermodynamics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Drunkard’s walk</p>
+        <p class="prev-next-title">Thermodynamics and statistical mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,21 +490,6 @@ We can show that easily by noticing</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-coin-flipping-game">The coin-flipping game</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-back-and-forth">Walking back and forth</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
