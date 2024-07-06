@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise_4';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -426,6 +428,53 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-4">
 <h1>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition" id="prob-4-1">
+<p class="admonition-title">Problem 1: Simplest application of duality– factorization of partition function</p>
+<p>In our previous homework, we have shown that non-interacting system has a nice property that the partition function factorizes. The reason is the total energy of the system is just the sum of the energy of individual sub-components. We also realize that if there is energy stored between different sub-components, it kind of suggest that we cannot factorize the partition function. (But, is it always true?) Let’s try to revisit the issue again here using the Ising model.
+The Ising model for <span class="math notranslate nohighlight">\(N\)</span> spins without external field can be described as</p>
+<div class="math notranslate nohighlight">
+\[
+	H=-J\sum_{i=1}^{N-1}\sigma_i\sigma_{i+1}\text{.}
+\]</div>
+<p>Here, we assume the system has open boundary condition. <span class="math notranslate nohighlight">\(\sigma_{i}=\pm1\)</span> is the Ising variable.</p>
+<ol class="arabic simple">
+<li><p>Let’s start from a small system with <span class="math notranslate nohighlight">\(N=3\)</span>. Write down the possible configurations for the system and the corresponding total energy.</p></li>
+<li><p>What’s the canonical partition function, <span class="math notranslate nohighlight">\(Z_{N=3}\)</span>, for the <span class="math notranslate nohighlight">\(N=3\)</span> system at temperature <span class="math notranslate nohighlight">\(T\)</span>?</p></li>
+<li><p>Can you factorize <span class="math notranslate nohighlight">\(Z_{N=3}\)</span> in some way such that <span class="math notranslate nohighlight">\(Z_{N=3}=K(\mathcal{Z})^2\)</span>? Here, <span class="math notranslate nohighlight">\(K\)</span> is a numerical factor.</p></li>
+<li><p>If you interpret <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> as a partition function, what the corresponding energy means in the original model? What is the meaning of <span class="math notranslate nohighlight">\(K\)</span>?</p></li>
+<li><p>Let’s relax the <span class="math notranslate nohighlight">\(N=3\)</span> condition, what is the partition function for arbitrary <span class="math notranslate nohighlight">\(N\)</span>? The line of thought here is sometimes referred as \emph{duality}. Some kind of neat way to perform changes of variable. This is the simplest version of it, but there are more sophisticated and interesting extensions of this idea.</p></li>
+</ol>
+</div>
+<div class="tip admonition" id="prob-4-2">
+<p class="admonition-title">Problem 2: A two-level system– Schottky anomaly</p>
+<p>Consider <span class="math notranslate nohighlight">\(N\)</span> independent two level systems with energy levels <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span> at temperature <span class="math notranslate nohighlight">\(T\)</span>. We assume <span class="math notranslate nohighlight">\(E_2&gt;E_1\)</span> and the energy gap is <span class="math notranslate nohighlight">\(\varepsilon=E_2-E_1&gt;0\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Write down the canonical partition function, <span class="math notranslate nohighlight">\(Z\)</span>, for the <span class="math notranslate nohighlight">\(N\)</span> independent two level systems. Express the result using <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p></li>
+<li><p>Derive the expectation value of energy using <span class="math notranslate nohighlight">\(E=-\frac{\partial \ln Z}{\partial \beta}\)</span>. Here <span class="math notranslate nohighlight">\(\beta=\left( k_BT \right)^{-1}\)</span>.</p></li>
+<li><p>The specific heat of the system is <span class="math notranslate nohighlight">\(C=\frac{\partial E}{\partial T}\)</span>. Derive the expression in terms of <span class="math notranslate nohighlight">\(\theta=\frac{\varepsilon}{k_BT}\)</span>.</p></li>
+<li><p>Find the asymptotic behavior (to leading order in <span class="math notranslate nohighlight">\(\theta\)</span>) of <span class="math notranslate nohighlight">\(C\)</span> at the following two limits. (i) <span class="math notranslate nohighlight">\(k_BT\ll \varepsilon\)</span> and (ii) <span class="math notranslate nohighlight">\(k_BT\gg\varepsilon\)</span>.</p></li>
+</ol>
+<p>The specific heat will have a maximum value at the temperature such that <span class="math notranslate nohighlight">\(k_BT\approx \varepsilon\)</span>. That is, one can use the peak of the specific heat to have a rough idea about the energy gap for the two level system. A very useful estimation for the modeling from experiment data!</p>
+</div>
+<div class="tip admonition" id="prob-4-3">
+<p class="admonition-title">Problem 3: Concept of density of states</p>
+<p>Another way to express density of states is by <span class="math notranslate nohighlight">\(D(E)=\frac{1}{V}\sum_{i=1}^{N}\delta\left( E-E(\boldsymbol{k}_{i}) \right)\)</span> for discrete <span class="math notranslate nohighlight">\(\boldsymbol{k}_{i}\)</span>. For continuous <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> in <span class="math notranslate nohighlight">\(d\)</span> dimension, we have <span class="math notranslate nohighlight">\(D(E)=\frac{1}{L^{d}}\left( \frac{L}{2\pi} \right)^{d}\int d^{d}\boldsymbol{k}\delta(E-E(\boldsymbol{k}))=\int \frac{d^{d}\boldsymbol{k}}{(2\pi)^{d}} \delta(E-E(\boldsymbol{k}))\)</span>. (Note: density of states counts the number of states per volume in an energy shell. The value could differ when we use different boundary conditions. Here, we use the hard wall boundary condition with <span class="math notranslate nohighlight">\(\phi(0)=\phi(L)=0\)</span>. Also, we consider spinless fermions for all questions in this problem. Therefore, we can drop the (2S+1) factor related to the internal degree of freedom.) We also have learned in HW2 that <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} d^{d}\boldsymbol{k}=\int_{0}^{\infty}S_{d}k^{d-1}dk\)</span> with <span class="math notranslate nohighlight">\(S_d=\frac{2\pi^{d/2}}{\Gamma(d/2)}\)</span>. <span class="math notranslate nohighlight">\(\delta(x^2-a^2)=\frac{1}{2|a|}\left[ \delta(x+a)+\delta(x-a) \right]\)</span>, you will use above identity frequently. Consider the following questions</p>
+<ol class="arabic simple">
+<li><p>Density of states for free particles in a box with at different dimensions, <span class="math notranslate nohighlight">\(E=\frac{\hbar^2 |\boldsymbol{k}|^2}{2m}\)</span> and the volume is <span class="math notranslate nohighlight">\(L^d\)</span>.</p>
+<ol class="arabic simple">
+<li><p>For 1D system ,we have <span class="math notranslate nohighlight">\(D_{1D}(E)=\int_{-\infty}^{\infty} \frac{d k}{2\pi}\delta(E-\frac{\hbar^2 k^2}{2m})\)</span>. Evaluate this integral and get the expression of <span class="math notranslate nohighlight">\(D_{1D}(E)\)</span>.</p></li>
+<li><p>Repeat above calculation for the 3D case</p></li>
+<li><p>Derive the general expression for <span class="math notranslate nohighlight">\(d\)</span>-dimensional case.</p></li>
+</ol>
+</li>
+<li><p>Derive the Fermi energy in <span class="math notranslate nohighlight">\(d\)</span> dimension for system with <span class="math notranslate nohighlight">\(N\)</span> electrons. Express the final result using density at <span class="math notranslate nohighlight">\(d\)</span> dimension, <span class="math notranslate nohighlight">\(n_d=\frac{N}{L^d}\)</span>.</p></li>
+<li><p>Using the general expression of the density of state in <span class="math notranslate nohighlight">\(d\)</span> dimension, we can repeat the simple minded guess of the specific heat of degenerate Fermi gas to be <span class="math notranslate nohighlight">\(C\approx \frac{D_d(E_F)L^d(k_BT)^2}{T}=D_d(E_F)L^d k_B^2 T\)</span>. Show that <span class="math notranslate nohighlight">\(C\propto \frac{T}{T_F}\)</span> is independent of dimension.</p></li>
+<li><p>Here is an interesting puzzle to understand the meaning of density of state in 1D.
+From the description of density of state, we know the meaning of density of state is to convert the integral from <span class="math notranslate nohighlight">\(d\boldsymbol{k}\)</span> to <span class="math notranslate nohighlight">\(dE\)</span>. In 1D, <span class="math notranslate nohighlight">\(d\boldsymbol{k}\)</span> is almost equivalent to <span class="math notranslate nohighlight">\(dk\)</span>.
+We can use another way to derive the density of states. First, we have <span class="math notranslate nohighlight">\(\frac{d E}{dk}=\frac{\hbar^2 k}{m}\)</span>. Then, we replace <span class="math notranslate nohighlight">\(k=\sqrt{\frac{2mE}{\hbar^2}}\)</span>. So we have <span class="math notranslate nohighlight">\(dk=\frac{m}{\hbar \sqrt{2mE}}dE=\frac{1}{2\hbar}\sqrt{\frac{2m}{E}}dE\)</span>. If we use the definition that the density of state is the number of state per volume in an energy shell. We should have the density of state by <span class="math notranslate nohighlight">\(\frac{1}{L}\frac{dk}{\Delta k}=\frac{1}{2\pi}dk=\frac{1}{2\pi}\frac{1}{2\hbar}\sqrt{\frac{2m}{E}}dE=d(E)dE\)</span>. The density of state <span class="math notranslate nohighlight">\(d(E)\)</span> derived using this approach is <span class="math notranslate nohighlight">\(d(E)=\frac{1}{2\pi}\frac{1}{2\hbar}\sqrt{\frac{2m}{E}}\)</span>. Compare <span class="math notranslate nohighlight">\(d(E)\)</span> with the <span class="math notranslate nohighlight">\(D(E)\)</span> in 1 (a). Did they agree with each other? If not, why the two approaches give different answers?
+\end{enumerate}</p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

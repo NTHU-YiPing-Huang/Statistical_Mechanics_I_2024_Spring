@@ -484,6 +484,48 @@ The phase space of the composite system is</p></li>
 </li>
 </ol>
 </div>
+<div class="tip admonition" id="prob-3-4">
+<p class="admonition-title">Problem 4: Microcanonical ensemble</p>
+<p>Ising model is a simplification for the real magnetic system. The magnetic moment is assumed to have fixed value and can only take two possible orientation opposite with each other. For the <span class="math notranslate nohighlight">\(i\)</span>-th magnetic ion, the magnetic moment is represented by <span class="math notranslate nohighlight">\(\boldsymbol{\mu}_i=\mu \sigma_i\)</span>. Here, <span class="math notranslate nohighlight">\(\mu\)</span> is the magnitude of the moment and <span class="math notranslate nohighlight">\(\sigma_i=\pm1\)</span>. The spins in the paramagnetic phase are statistically independent from each other. Then, we ask the question: given specific <span class="math notranslate nohighlight">\(M\)</span> value, what is the accessible phase space of the system? Basically, we can randomly pick some spins to point up and some spins to point down as long as the value of <span class="math notranslate nohighlight">\(M\)</span> corresponding to the specified value. So the accessible phase space volume is</p>
+<div class="math notranslate nohighlight">
+\[
+	|\Gamma|=\frac{N!}{\left[\frac{1}{2}\left( N+\frac{M}{\mu} \right)\right]!\left[\frac{1}{2}\left( N-\frac{M}{\mu} \right)\right]!}\text{.}
+\]</div>
+<ol class="arabic simple">
+<li><p>From the expression, we can derive <span class="math notranslate nohighlight">\(S(M)\)</span> explicitly through the Stirling’s approximation. (Assuming <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(M\)</span> are macroscopic quantities.) Derive <span class="math notranslate nohighlight">\(S(M)\)</span> after using the Stirling’s approximation.</p></li>
+<li><p>Use the result of <span class="math notranslate nohighlight">\(S(M)\)</span> to find the equation of state <span class="math notranslate nohighlight">\(m\equiv \frac{M}{N}=\mu \tanh \left( \frac{\mu h}{k_BT} \right)\)</span>. (Hint: you can use the identity <span class="math notranslate nohighlight">\(\frac{1}{2}\ln\frac{1+x}{1-x}=\tanh^{-1}x, |x|&lt;1\)</span>.)</p></li>
+<li><p>The constant field specific heat is defined as <span class="math notranslate nohighlight">\(C_h=\left.T\frac{\partial S}{\partial T}\right|_{h}\)</span>. Find the expression of <span class="math notranslate nohighlight">\(C_h\)</span>.</p></li>
+</ol>
+</div>
+<div class="tip admonition" id="prob-3-5">
+<p class="admonition-title">Problem 5: Canonical ensemble at fixed temperature <span class="math notranslate nohighlight">\(T\)</span></p>
+<ol class="arabic simple">
+<li><p>Single spin case:</p>
+<ol class="arabic simple">
+<li><p>Consider an Ising spin with <span class="math notranslate nohighlight">\(\mu=1\)</span> with proper unit, <span class="math notranslate nohighlight">\(\sigma_1=+1\)</span> or <span class="math notranslate nohighlight">\(-1\)</span>, in the external field, <span class="math notranslate nohighlight">\(h\)</span>. The energy of this  system is <span class="math notranslate nohighlight">\(H_1=-h\sigma_1\)</span>. What are the possible energies of this system? What are the microscopic configurations of the Ising spin for the corresponding energies?</p></li>
+<li><p>Write down the partition function <span class="math notranslate nohighlight">\(Z_1\)</span> of this single spin system.</p></li>
+</ol>
+</li>
+<li><p>Three spins case:</p>
+<ol class="arabic simple">
+<li><p>Consider three such Ising spins decoupled from each other. That is, the total energy of the three spin system is <span class="math notranslate nohighlight">\(H=-h(\sigma_1+\sigma_2+\sigma_3)\)</span>. What are the possible microscopic configuration of the spins? You can imagine the spins are sitting at real space, so they are distinguishable according to their coordinates. What are the corresponding energies for each configuration?</p></li>
+<li><p>Write down the partition function <span class="math notranslate nohighlight">\(Z\)</span> of this three-spin system.</p></li>
+</ol>
+</li>
+<li><p>Show that <span class="math notranslate nohighlight">\(Z=(Z_1)(Z_2)(Z_3)=(Z_1)^3\)</span>. Here <span class="math notranslate nohighlight">\(Z_i\)</span> is the partition function of the <span class="math notranslate nohighlight">\(i\)</span>-th spin.</p></li>
+<li><p>Suppose the Ising spin <span class="math notranslate nohighlight">\(\sigma_1\)</span> does not like to align with spin <span class="math notranslate nohighlight">\(\sigma_2\)</span>, usually it means the system pays more energy to aligning the direction of <span class="math notranslate nohighlight">\(\sigma_1\)</span> and <span class="math notranslate nohighlight">\(\sigma_2\)</span>. We can describe such effect by including a term <span class="math notranslate nohighlight">\(J\sigma_1\sigma_2\)</span> with <span class="math notranslate nohighlight">\(J&gt;0\)</span>. That is, the total energy is now described by <span class="math notranslate nohighlight">\(H'=-h\left( \sigma_1+\sigma_2+\sigma_3 \right)+J\sigma_1\sigma_2\)</span>. We can construct the corresponding partition function <span class="math notranslate nohighlight">\(Z'\)</span> accordingly. Do you expect to have a factorizable structure as <span class="math notranslate nohighlight">\(Z'=(Z_1')(Z_2')(Z_3')\)</span>?  Why? or Why not? Here <span class="math notranslate nohighlight">\(Z_i'\)</span> is the partition function formed by the degree of freedom <span class="math notranslate nohighlight">\(\sigma_i\)</span>.</p></li>
+</ol>
+</div>
+<div class="tip admonition" id="prob-3-6">
+<p class="admonition-title">Problem 6: Estimate the probability of electrons at the ground state of Hydrogen atom:</p>
+<p>We can use what we have learned during statistical mechanics to understand some systems we have learned. One important system is the Hydrogen atom, the electron has discrete energy levels with <span class="math notranslate nohighlight">\(E_n=-\frac{E^{*}}{n^2}\)</span>. Here, <span class="math notranslate nohighlight">\(E^{*}=13.6 eV\)</span> and <span class="math notranslate nohighlight">\(n\)</span> is the principle quantum number. Using Bohr model, we have the radius of atom to be <span class="math notranslate nohighlight">\(r_{n}=n^2 r_1\)</span>, <span class="math notranslate nohighlight">\(r_1\approx 5\times 10^{-11}m\)</span>. <span class="math notranslate nohighlight">\(k_B\approx 8.6\times 10^{-5}eV/K=1.38\times 10^{-23}J/K\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Write down the expression of partition function of the electron , <span class="math notranslate nohighlight">\(Z_{e}\)</span>, on a Hydrogen atom in the canonical ensemble at temperature <span class="math notranslate nohighlight">\(T\)</span>. In principle, we should sum all the contribution to <span class="math notranslate nohighlight">\(n\to \infty\)</span>, the probability of the electron to be at ground state of a Hydrogen atom is <span class="math notranslate nohighlight">\(P^{*}=\frac{e^{\frac{E^*}{k_BT}}}{Z_e}\)</span>. What is <span class="math notranslate nohighlight">\(P^{*}\)</span> when we including all states <span class="math notranslate nohighlight">\(E_n\)</span>? Does it make sense?</p></li>
+<li><p>The mean free path, <span class="math notranslate nohighlight">\(l\)</span>, of molecular in the air at ambient pressure at <span class="math notranslate nohighlight">\(T=\)</span>300K is around <span class="math notranslate nohighlight">\(7\times 10^{-8}\)</span>m. Which means the distance between two collision event is about <span class="math notranslate nohighlight">\(l\)</span>. If we use the expression of <span class="math notranslate nohighlight">\(r_n\)</span> above, what is the minimal value <span class="math notranslate nohighlight">\(n_l\)</span> such that <span class="math notranslate nohighlight">\(r_{n_l}&gt; l\)</span>?</p></li>
+<li><p>The thermal wave length at temperature <span class="math notranslate nohighlight">\(T\)</span> is <span class="math notranslate nohighlight">\(\lambda_T=\left( \frac{h^2}{2\pi m k_B T} \right)^{1/2}\)</span>. The mass of hydrogen atom is about <span class="math notranslate nohighlight">\(1.66\times 10^{-27}kg\)</span>. What is the thermal wave length for a Hydrogen atom at <span class="math notranslate nohighlight">\(T=300K\)</span>?  What is the minimal value  <span class="math notranslate nohighlight">\(n_{T}\)</span> such that <span class="math notranslate nohighlight">\(r_{n_T}&gt;\lambda_{T}\)</span>?</p></li>
+<li><p>You can use <span class="math notranslate nohighlight">\(n_l\)</span> or <span class="math notranslate nohighlight">\(n_{T}\)</span> to cutoff your expression in <span class="math notranslate nohighlight">\(Z_e\)</span>, write down the formal expression of the partition function and the corresponding <span class="math notranslate nohighlight">\(P^{*}\)</span> as a function of the cutoff. For the two different cutoff scheme (<span class="math notranslate nohighlight">\(n_l\)</span> and <span class="math notranslate nohighlight">\(n_{T}\)</span>), which one has higher probability <span class="math notranslate nohighlight">\(P^{*}\)</span>? The evaluation of <span class="math notranslate nohighlight">\(P^{*}\)</span> can be done numerically and the two cutoff scheme can give you an estimation of the range of probability <span class="math notranslate nohighlight">\(P^{*}\)</span>.</p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

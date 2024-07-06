@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise_6';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -426,6 +428,83 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-6">
 <h1>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition" id="prob-6-1">
+<p class="admonition-title">Problem 1: Change of basis in second quantization</p>
+<p>We can represent quantum operators in different basis when we use the first quantized expression. We have formulated second quantization during the lecture. Let’s consider the second quantized operator for kinetic energy for free particles in a one dimensional box with length <span class="math notranslate nohighlight">\(L\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+	\widehat{H}_{kin}=\sum_{k,k'}a^{\dagger}_{k}\{k|\frac{\widehat{P}^2}{2m}|k'\} a_{k'}=\sum_{k}\frac{(\hbar k)^2}{2m} \widehat{n}_k
+\]</div>
+<p>Here, we use <span class="math notranslate nohighlight">\(|k\}\)</span> to represent the single particle ket for eigen basis of momentum operator. <span class="math notranslate nohighlight">\(\widehat{P}|k\}=\hbar k|k\}\)</span> and <span class="math notranslate nohighlight">\(\{x|k\}=\frac{1}{\sqrt{L}} e^{ikx}\)</span>.
+Suppose we need to change the basis into a basis formed by <span class="math notranslate nohighlight">\(|\alpha\}\)</span>. Here, <span class="math notranslate nohighlight">\(\{x|\alpha \}=f_{\alpha}(x)\)</span>. <span class="math notranslate nohighlight">\(\alpha^{\dagger}_{k}/a_{k}\)</span> are the rising and lowering operator for the single particle mode <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<ol class="arabic simple">
+<li><p>How to change the basis to express <span class="math notranslate nohighlight">\(|k\}\)</span> using the basis <span class="math notranslate nohighlight">\(|\alpha\}\)</span> in first quantization expression? Express your result using <span class="math notranslate nohighlight">\(f_{\alpha}(x)\)</span> and required operations. (Hint: we want to express our result where <span class="math notranslate nohighlight">\(x\)</span> is considered as a dummy index. We can do that by inserting compete set <span class="math notranslate nohighlight">\(\sum_{\alpha}|\alpha\}\{\alpha|\)</span> first. Then, insert complete set <span class="math notranslate nohighlight">\(\int_0^L dx |x\}\{x|\)</span> to express <span class="math notranslate nohighlight">\(\{\alpha|k\}\)</span>.)</p></li>
+<li><p>How to change the basis of a second quantized Hamiltonian? Find <span class="math notranslate nohighlight">\(c_{\alpha}(k)\)</span> in <span class="math notranslate nohighlight">\(a^{\dagger}_{k}=\sum_{\alpha}c_{\alpha}(k)a^{\dagger}_{\alpha}\)</span>. (Hint: We can find it by comparing <span class="math notranslate nohighlight">\(\widehat{H}_{kin}=\sum_{\alpha,\alpha'}a^{\dagger}_{\alpha}\{\alpha|\frac{\widehat{P}^2}{2m}|\alpha'\}a_{\alpha'}\)</span> and the change of basis process in the previous question.)</p></li>
+<li><p>Express the second quantized operator <span class="math notranslate nohighlight">\(\widehat{H}_{kin}\)</span> in the real space representation.</p></li>
+</ol>
+</div>
+<div class="tip admonition" id="prob-6-2">
+<p class="admonition-title">Problem 2: 1D Ising model bit by bit</p>
+<ol class="arabic">
+<li><p>Exact calculation of a three-spin Ising model (Open boundary condition):
+The Hamiltonian is <span class="math notranslate nohighlight">\(H_{3spins}=-J(s_1s_2+s_2s_3)\)</span>, <span class="math notranslate nohighlight">\(s_i=\pm1\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Find all the configurations.</p></li>
+<li><p>Calculate the corresponding energy of each configuration.</p></li>
+<li><p>Write down the partition function of the three-spin Ising model.</p></li>
+</ol>
+</li>
+<li><p>Now consider an Ising chain with <span class="math notranslate nohighlight">\(N\)</span> spins. Let’s assume we ignore the boundary effects. <span class="math notranslate nohighlight">\(H(\left\{ s_i \right\})=-J\sum_{i}s_is_{i+1}\)</span>. Here <span class="math notranslate nohighlight">\(\beta J\equiv K\)</span>.</p>
+<div class="figure align-default" id="fig-1dising">
+<a class="reference internal image-reference" href="_images/decimation.pdf"><img alt="_images/decimation.pdf" src="_images/decimation.pdf" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Step by step decimation process for one-dimensional Ising model.</span><a class="headerlink" href="#fig-1dising" title="Permalink to this image">#</a></p>
+</div>
+<p>Above calculation sum over all the spin configurations all at once. Now we try to see if we can calculate the partition function in a different way.</p>
+<ol class="arabic simple">
+<li><p>Suppose we start from the spin chain as in Fig.\ref{fig:1DIsing} (a). We divide the spins using the three-spin clusters. Now consider the spins between two successive black spins (The grey part of the figure), <span class="math notranslate nohighlight">\(s'_{i}\)</span> and <span class="math notranslate nohighlight">\(s'_{i+1}\)</span>. The factors in the partition function summation related to these spins are</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	e^{K s'_{i}s_{b}}e^{K s_{b}s_{r}}e^{K s_{r}s'_{i+1}}
+	\]</div>
+<p>, where <span class="math notranslate nohighlight">\(s_{b}\)</span> and <span class="math notranslate nohighlight">\(s_{r}\)</span> represent the blue and red spins between the <span class="math notranslate nohighlight">\(s'_{i}\)</span> and <span class="math notranslate nohighlight">\(s'_{i+1}\)</span>. And we use <span class="math notranslate nohighlight">\(K=\beta J\)</span> for our convenience One can express <span class="math notranslate nohighlight">\(e^{K s_{b}s_{r}}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+	e^{K s_{b}s_{r}}=\cosh \left( K \right) (1+x s_{b}s_{r})\text{.}\label{Bfactor}
+	\]</div>
+<p>Find the expression of <span class="math notranslate nohighlight">\(x\)</span>. Use <span class="math notranslate nohighlight">\(K\)</span> (without <span class="math notranslate nohighlight">\(s_r\)</span> and <span class="math notranslate nohighlight">\(s_b\)</span>) to express your answer. (Hint: use the even/oddness of <span class="math notranslate nohighlight">\(\sinh x\)</span> and <span class="math notranslate nohighlight">\(\cosh x\)</span>. )</p>
+<ol class="arabic simple" start="2">
+<li><p>Use the result of the above expression to simplify the expression</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	\sum_{s_{b}=\pm1}\sum_{s_{r}=\pm1}e^{K s'_{i}s_{b}}e^{K s_{b}s_{r}}e^{K s_{r}s'_{i+1}}=2^{n}\left( \cosh K \right)^3\left( 1+g(x)s_i's_{i+1}' \right)=e^{K's_{i}'s_{i+1}'}\text{.}\label{3spinZ}
+	\]</div>
+<p>Find <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span>. (Hint: expand the expression using (\ref{Bfactor}) and use the fact that terms proportional with odd powers of <span class="math notranslate nohighlight">\(s_i\)</span> vanishes.)</p>
+<ol class="arabic simple" start="3">
+<li><p>Comparing Eq. (\ref{3spinZ}) and Eq. (\ref{Bfactor}), the forms are very similar. If we ignore the pre factors, the <span class="math notranslate nohighlight">\(\cosh K\)</span> in (\ref{Bfactor}) and <span class="math notranslate nohighlight">\(2^{n}(\cosh K)^3\)</span> in (\ref{3spinZ}), we can build the relation between <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(K'\)</span> (or equivalently <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span>). Find the relation between <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(K'\)</span>.</p></li>
+<li><p>When we sum over <span class="math notranslate nohighlight">\(s_b\)</span> and <span class="math notranslate nohighlight">\(s_r\)</span>, the partition function can be considered as a partition function of coupled black spins <span class="math notranslate nohighlight">\(\left\{ s'_{i} \right\}\)</span>. (Because we have a sum of products of <span class="math notranslate nohighlight">\(\left\{ s'_{i} \right\}\)</span> in the partition function with certain coefficients that capture how the black spins are coupled.)
+Formally, we go from the original partition function</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	Z\Big|_{ \left\{ s_i \right\}} = \sum_{ \left\{ s_i \right\} }e^{-\beta H(\left\{ s_i \right\})}
+	\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Big|_{ \left\{ s_i \right\}}\)</span> means the statistical variables are <span class="math notranslate nohighlight">\(\left\{ s_i \right\}\)</span>.
+Now we keep the black spins intact and sum over the blue and red spins.</p>
+<div class="math notranslate nohighlight">
+\[
+	Z\Big|_{ \left\{ s_i \right\}}= \sum_{ \left\{ s_i \right\} }e^{-\beta H(\left\{ s_i \right\})}=\sum_{ \left\{ s'_{i} \right\}}\left[\sum_{ \left\{ s_{b,i} \right\}}\sum_{ \left\{ s_{r,i} \right\}}e^{-\beta H(\left\{ s_i \right\})}\right]=\sum_{ \left\{ s'_{i} \right\}}e^{-\beta H'\left( \left\{ s'_{i} \right\} \right)}
+	=Z\Big|_{ \left\{ s'_i \right\}}
+	\]</div>
+<p>Here <span class="math notranslate nohighlight">\(H'( \left\{ s'_{i} \right\})\)</span> might not have the same expression as <span class="math notranslate nohighlight">\(H(\left\{ s_i \right\})\)</span>. Use Eq. (\ref{3spinZ}) and derive the expression of <span class="math notranslate nohighlight">\(H'(\left\{ s'_{i} \right\})\)</span>. (Hint: The nearest neighbor Boltzmann factor is expressed as <span class="math notranslate nohighlight">\(e^{K's_i's_{i+1}'}=\cosh K' \left( 1+x s_{i}'s_{i+1}' \right)\)</span>. Compare this expression with Eq. (\ref{3spinZ}) to have a hint about the possible expression. <span class="math notranslate nohighlight">\(\beta H'(\left\{ s'_{i} \right\})=Ng(K,K')-K'\sum_{i}s'_{i}s'_{i+1}\)</span>. Here <span class="math notranslate nohighlight">\(N\)</span> is the total number of the original sites. Find the expression of <span class="math notranslate nohighlight">\(g(K,K')\)</span>.)</p>
+<ol class="arabic simple" start="5">
+<li><p>From the above expression, we know the new Hamiltonian <span class="math notranslate nohighlight">\(H'(\left\{ s_{i}' \right\})\)</span> has the same form as the original one. Except for the coupling constant, which is related to the new value <span class="math notranslate nohighlight">\(K'\)</span>, and the constant term, which is independent of the <span class="math notranslate nohighlight">\(\left\{ s_{i} \right\}\)</span>, the Hamiltonian is basically equivalent with the original Hamiltonian. The term that is independent of <span class="math notranslate nohighlight">\(\{s'_{i}\}\)</span> will not affect the calculation of the expectation value. However, it could influence the calculation of the free energy. We can now try to iterate this process by dividing <span class="math notranslate nohighlight">\(\left\{ s'_{i} \right\}\)</span> into three-spin clusters again as in Fig. \ref{fig:1DIsing}(b) and sum over the blue and red spins, <span class="math notranslate nohighlight">\(s'_{b,i}\)</span> and <span class="math notranslate nohighlight">\(s'_{r,i}\)</span>. Then the Hamiltonian will be expressed by the black spins in Fig.\ref{fig:1DIsing}(b), <span class="math notranslate nohighlight">\(s''_{i}\)</span> with coupling related to <span class="math notranslate nohighlight">\(K''\)</span>. Use the expression you had of <span class="math notranslate nohighlight">\(x\)</span> to describe qualitatively how does <span class="math notranslate nohighlight">\(x=x_{int}\)</span> changes as you perform this partial summation scheme after several times. (Hint: Does it grows to infinite or does it decay to zero or does it fix at certain value?)</p></li>
+<li><p>How would you interpret the behavior you found in the last question? (Hint: The only dimensionless parameter in the system is <span class="math notranslate nohighlight">\(K=\frac{J}{k_BT}\)</span>, does it goes toward <span class="math notranslate nohighlight">\(T=0\)</span> limit or <span class="math notranslate nohighlight">\(T=\infty\)</span> limit?)</p></li>
+</ol>
+</li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
