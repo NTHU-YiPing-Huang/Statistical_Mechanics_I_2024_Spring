@@ -1,6 +1,8 @@
+(Exercise_2)=
 # Exercise 2
 
 ```{admonition} Problem 1 (Diffusion equation in $d$ dimension)
+:name: Prob_2-1
 :class: tip
 
 The diffusion equation can be generalized into $d$ dimension as
@@ -24,6 +26,7 @@ $$
 
 
 ```{admonition} Problem 2 (Simplified version of random matrix theory)
+:name: Prob_2-2
 :class: tip
 
 The random matrix theory is invented by Eugene Wigner to describe the spectra of nuclei of heavy atoms. To introduce the topic properly probably requires another year-long course. So we are not going to discuss the details of it. However, the main idea can be demonstrated using $2\times 2$ Hamiltonians. That can be done during a homework problem of statistical mechanics (I).
@@ -58,6 +61,7 @@ The random matrix theory is initially invented for the spectra of nuclei of heav
 ```
 
 ```{admonition} Problem 3 (Why large $N$ is useful? Properties of $N$-dimensional space:)
+:name: Prob_2-3
 :class: tip
 
 In statistical mechanics, we work in the phase space with dimension $N$ to be large. Such space has properties that are very counter intuitive. Since $N$ is large, so we might be able to use it as a big parameter and construct the saddle point approximation (Which is useful to expand our analytic understanding). So we can see the fact that $N$ is large actually simplifies our problem if we use it wisely. We discuss some properties of the $N$-dimensional space.
@@ -104,6 +108,7 @@ In statistical mechanics, we work in the phase space with dimension $N$ to be la
 
 
 ```{admonition} Problem 4 (Universality beyond the ideal gas model:)
+:name: Prob_2-4
 :class: tip
 
 The ideal gas model gives the state equation $P\frac{V}{N}=k_BT$. However, the model is pretty artificial that it consider particles as mathematical points. The Van der Waals equation take into the account that
